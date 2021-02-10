@@ -18,8 +18,10 @@ selected = list(df_pot.Name)
 
 df_selected = df21[df21.Name.isin(selected)]
 
-plt.hist(df_selected.OVA)
-#plt.show()
+df_selected.drop(df_selected.loc[df_selected['ID']==224442].index, inplace=True)
+df_selected.drop(df_selected.loc[df_selected['ID']==256855].index, inplace=True)
 
-print(df_selected[df_selected.OVA == min(df_selected.OVA)])
-print(df19[df19.Name == "J. Gomez"])
+plt.hist(df_selected.OVA)
+plt.show()
+
+print(df_pot[df_pot.Name == "P. Pellegri"])
